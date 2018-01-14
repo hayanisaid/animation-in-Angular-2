@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # AnimationNg
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
@@ -29,3 +30,7 @@ Run `ng github-pages:deploy` to deploy to GitHub Pages.
 ## Further help
 
 To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+=======
+# animation-in-Angular-2
+Exploring the Animation in Angular.js 2 
+>>>>>>> fcfb87b5aa5d9bae8f41e9bce73a1022ae50479f
