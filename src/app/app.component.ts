@@ -17,8 +17,8 @@ import { Component,
     trigger("toggle",[
          state('off',style({ backgroundColor:"#fff"})),
          state('on',style({backgroundColor:"#F97300",boxShadow:shad})),
-         transition("off => on",[animate('.3s ')]),
-         transition("on => off",[animate('.3s ')])
+         transition("off => on",[animate('.3s ',style({transform:"rotateX(20deg)"}))]),
+         transition("on => off",[animate('.3s ',style({transform:"rotateX(-20deg)"}))])
   
     	])
 
