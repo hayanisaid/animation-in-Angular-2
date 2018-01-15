@@ -2,8 +2,17 @@
 
 <div class="container">
   <button (click)="togglebulb()" class="btn">toggle</button>
+  <button (click)="toggleHight()" class="btnH">toggleHight</button>
 	<div (@toggle.start)="animationStart($event)" (@toggle.done)="animationDone($event)" class="room" [@toggle]="Roomstate">
 		
+	</div>
+	<div [@hieghtToggle]="hieghtState" class="heightCalc">
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
 	</div>
 	<span>
 		<i></i>

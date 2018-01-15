@@ -28,6 +28,10 @@
     z-index: 1;
     margin-top: -90px;
 }
+.container .heightCalc{
+	background: #fff;
+	width: 15em;
+}
 .container  span i{
     background: #3c3c3c;
     /* height: 44px; */
@@ -38,12 +42,12 @@
     /* position: absolute; */
 }
 .container .btn{
-	    background: #f5f5f5;
+	  background: #f5f5f5;
     border: 1px solid #F97300;
     padding: 1em 2em;
     color: #888;
     position: absolute;
-    position: absolute;
+    
     right: 116px;
     width: 17em;
     top: 31%;
@@ -51,6 +55,15 @@
     height: 10em;
     transition: .1s ease-in-out;
     box-shadow: 1px 18px 3px #ccc inset;
+}
+.container .btnH{
+  background: #f5f5f5;
+    border: 1px solid #F97300;
+    padding: 1em 2em;
+    color: #888;
+    cursor: pointer;
+    height: 10em;
+   
 }
 .container .btn:active{
 	box-shadow: 0 !important;

@@ -27,6 +27,12 @@ import { Component,
         /* transition("off => on",[animate('.3s ',style({transform:"rotateX(20deg)"}))]),
          transition("on => off",[animate('.3s ',style({transform:"rotateX(-20deg)"}))])*/
   
+    	]),
+    /*height:(*) it calc the hight automaticly */
+    trigger('hieghtToggle',[
+       state('normalHieght',style({height:0})),
+       state('fullHieght', style({height:'*'})),
+       transition("normalHieght<=>fullHieght",[animate('200ms')])
     	])
 
 
@@ -34,6 +40,7 @@ import { Component,
 })
 export class AppComponent {
 	Roomstate: string ="off";
+	hieghtState: string="normalHieght"
   title = 'Angular Animations!';
 
 
@@ -41,7 +48,9 @@ export class AppComponent {
   togglebulb(){
   	this.Roomstate = (this.Roomstate==="off")?"on":"off"
   }
-
+ toggleHight(){
+  this.hieghtState=(this.hieghtState==="normalHieght")?"fullHieght":"normalHieght"
+ }
   /*animation callback*/
   animationStart(event:any){
   	console.log(event.fromState)
