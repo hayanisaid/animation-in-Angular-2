@@ -3,12 +3,16 @@
 <div class="container">
   <button (click)="togglebulb()" class="btn">toggle</button>
   <button (click)="toggleHight()" class="btnH">toggleHight</button>
+  <button (click)="LeaveAnimatoin()">TriggerLeave</button>
 	<!-- <div (@toggle.start)="animationStart($event)" (@toggle.done)="animationDone($event)" class="room" [@toggle]="Roomstate">
 		
 	</div> -->
 	<!-- group animation -->
-	<div [@toggle]="Roomstate"  class="room">
+	<!-- <div [@toggle]="Roomstate"  class="room">
 		
+	</div> -->
+	<div *ngIf="VoidState" [@AnimatoinLeave]="VoidState"  class="roomLeave">
+		hellow World
 	</div>
 	<div [@hieghtToggle]="hieghtState" class="heightCalc">
 		<br>

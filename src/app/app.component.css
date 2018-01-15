@@ -65,6 +65,20 @@
     height: 10em;
    
 }
+.container .roomLeave{
+	 display: block;
+    position: relative;
+    width: 12em;
+    height: 9em;
+    /* border-top-left-radius: 104%; */
+    /* border-top-right-radius: 68%; */
+    border-radius: 50%;
+    /* border-bottom-left-radius: 279px; */
+    /* border-bottom-right-radius: 207px; */
+    margin: 5em auto;
+    background: #fff;
+    padding: 4em;
+}
 .container .btn:active{
 	box-shadow: 0 !important;
 }

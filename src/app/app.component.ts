@@ -5,7 +5,8 @@ import { Component,
      keyframes,
      animate,
      style,
-     group
+     group,
+   
 
 
  } from '@angular/core';
@@ -42,14 +43,44 @@ import { Component,
        state('normalHieght',style({height:0})),
        state('fullHieght', style({height:'*'})),
        transition("normalHieght<=>fullHieght",[animate('200ms')])
+    	]),
+    /*leave and enter animatoin [void=>*,*=>void]*/
+    // trigger("AnimatoinLeave",[
+    //    transition(":enter",[animate("3s",style({ transform:"translateX(50%)"}))]),
+    //    transition(":leave",[animate("4s",style({ transform:"translateX(300%)"}))])
+  
+    // 	])
+    /*with keyframes*/
+    trigger("AnimatoinLeave",[
+    	transition("void => *",[
+        style({transform:"translateX(-100%)"}),
+      animate(1000,keyframes([
+      style({opacity:1  , transform:"translateX(0)"   ,offset:0}),
+      style({opacity:0.5, transform:"translateX(50px)",offset:0.7}),
+      style({opacity:1  , transform:"translateX(0)"   ,offset:1.0})
+
+      	]))
+    		]),
+    	transition("*=>void",[
+        
+      animate(1000,keyframes([
+      style({opacity:1  , transform:"translateX(0)"   ,offset:0}),
+      style({opacity:0.5, transform:"translateX(50px)",offset:1}),
+      style({opacity:1  , transform:"translateX(0)"   ,offset:1.0})
+
+      	]))
+    		])
+      
+ 
     	])
 
 
   ]
 })
 export class AppComponent {
-	Roomstate: string ="off";
+	Roomstate: string ="off"
 	hieghtState: string="normalHieght"
+	VoidState: boolean=true;
   title = 'Angular Animations!';
 
 
@@ -59,6 +90,9 @@ export class AppComponent {
   }
  toggleHight(){
   this.hieghtState=(this.hieghtState==="normalHieght")?"fullHieght":"normalHieght"
+ }
+ LeaveAnimatoin(){
+ 	this.VoidState=this.VoidState?false:true;
  }
   /*animation callback*/
   animationStart(event:any){
