@@ -3,7 +3,11 @@
 <div class="container">
   <button (click)="togglebulb()" class="btn">toggle</button>
   <button (click)="toggleHight()" class="btnH">toggleHight</button>
-	<div (@toggle.start)="animationStart($event)" (@toggle.done)="animationDone($event)" class="room" [@toggle]="Roomstate">
+	<!-- <div (@toggle.start)="animationStart($event)" (@toggle.done)="animationDone($event)" class="room" [@toggle]="Roomstate">
+		
+	</div> -->
+	<!-- group animation -->
+	<div [@toggle]="Roomstate"  class="room">
 		
 	</div>
 	<div [@hieghtToggle]="hieghtState" class="heightCalc">

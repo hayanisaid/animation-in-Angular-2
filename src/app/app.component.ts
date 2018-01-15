@@ -4,7 +4,8 @@ import { Component,
      transition,
      keyframes,
      animate,
-     style
+     style,
+     group
 
 
  } from '@angular/core';
@@ -20,8 +21,16 @@ import { Component,
          /*for small code*/
          // transition("off => on,on =>off",[animate('.3s ',style({transform:"rotateX(20deg)"}))]),
          //or 
-        
-         transition("off <=> on",[animate('.3s ',style({transform:"rotateX(20deg)"}))]),
+        /*apply group animation*/
+        transition("off <=> on",[group([
+            animate("3s", style({transform:"translateX(200px)"})),
+            animate('2s 2s',style({transform:"translateY(200px)"})),
+            animate('2s 2s',style({transform:"translateX(-200px)"})),
+            animate('2s 2s',style({transform:"translateY(-200px)"})),
+            animate('3s',style({transform:"translateX(600px)",opacity:0}))
+ 
+        	])])
+        // transition("off <=> on",[animate('.3s ',style({transform:"rotateX(20deg)"}))]),
          //or 
         
         /* transition("off => on",[animate('.3s ',style({transform:"rotateX(20deg)"}))]),
