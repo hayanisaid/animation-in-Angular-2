@@ -2,7 +2,7 @@
 
 <div class="container">
   <button (click)="togglebulb()" class="btn">toggle</button>
-	<div class="room" [@toggle]="Roomstate">
+	<div (@toggle.start)="animationStart($event)" (@toggle.done)="animationDone($event)" class="room" [@toggle]="Roomstate">
 		
 	</div>
 	<span>

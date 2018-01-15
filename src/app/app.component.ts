@@ -17,8 +17,15 @@ import { Component,
     trigger("toggle",[
          state('off',style({ backgroundColor:"#fff"})),
          state('on',style({backgroundColor:"#F97300",boxShadow:shad})),
-         transition("off => on",[animate('.3s ',style({transform:"rotateX(20deg)"}))]),
-         transition("on => off",[animate('.3s ',style({transform:"rotateX(-20deg)"}))])
+         /*for small code*/
+         // transition("off => on,on =>off",[animate('.3s ',style({transform:"rotateX(20deg)"}))]),
+         //or 
+        
+         transition("off <=> on",[animate('.3s ',style({transform:"rotateX(20deg)"}))]),
+         //or 
+        
+        /* transition("off => on",[animate('.3s ',style({transform:"rotateX(20deg)"}))]),
+         transition("on => off",[animate('.3s ',style({transform:"rotateX(-20deg)"}))])*/
   
     	])
 
@@ -33,5 +40,19 @@ export class AppComponent {
 
   togglebulb(){
   	this.Roomstate = (this.Roomstate==="off")?"on":"off"
+  }
+
+  /*animation callback*/
+  animationStart(event:any){
+  	console.log(event.fromState)
+  	console.log(event.toState)
+  	console.log(event.totalTime)
+  	console.log("animatoin Started")
+  }
+   animationDone(event:any){
+  	console.log(event.fromState)
+  	console.log(event.toState)
+  	console.log(event.totalTime)
+  	console.log("animatoin completed")
   }
 }
